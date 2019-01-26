@@ -1,0 +1,21 @@
+<table>
+	<tr>
+		<th>id</th>
+		<th>date</th>
+		<th>place</th>
+		<th>price</th>
+		<th>marchandise</th>
+		<th>category_id</th>
+	</tr>
+
+	<% @outcomes.each do|outcome| %>
+		<tr>
+			<td><%= outcome.id %></td>
+			<td><%= outcome.date %></td>
+			<td><%= outcome.place %></td>
+			<td><%= outcome.price %></td>
+			<td><%= outcome.marchandise %></td>
+			<td><%= outcome.category_id %></td>
+		</tr>
+	<%end%>
+</table>
