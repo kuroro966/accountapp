@@ -1,15 +1,13 @@
 class OutcomesController < ApplicationController
 
   #before_action :move_to_index, except: [:index,:new]#indexアクションの場合は実行しない
-
-
   def index
-  	@outcomes=Outcome.all
+    @outcomes=Outcome.all
     @sum_price=Outcome.sum(:price)
   end
 
   def new
-  	@outcome = Outcome.new  		
+    @outcome = Outcome.new      
   end
 
   def edit
@@ -17,7 +15,7 @@ class OutcomesController < ApplicationController
   end
 
   def create
-  	@outcome = Outcome.create(create_params)
+    @outcome = Outcome.create(create_params)
     redirect_to action: :index
   end
 
