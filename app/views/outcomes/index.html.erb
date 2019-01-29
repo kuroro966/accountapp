@@ -1,10 +1,13 @@
+<p>outcomeのindexページです。</p>
+<p><%= link_to "outcomeを登録",new_outcome_path %></p>
+
 <table>
 	<tr>
 		<th>id</th>
 		<th>date</th>
 		<th>place</th>
-		<th>price</th>
 		<th>marchandise</th>
+		<th>price</th>
 		<th>category_id</th>
 	</tr>
 
@@ -13,9 +16,20 @@
 			<td><%= outcome.id %></td>
 			<td><%= outcome.date %></td>
 			<td><%= outcome.place %></td>
-			<td><%= outcome.price %></td>
 			<td><%= outcome.marchandise %></td>
+			<td><%= outcome.price %></td>
 			<td><%= outcome.category_id %></td>
+			<td><%= link_to "編集",edit_outcome_path(outcome) %></td>
+		  <td><%= link_to "削除",outcome_path(outcome), method: :delete %></td>
 		</tr>
 	<%end%>
+
+	    <td><%=  %></td>
+			<td><%=  %></td>
+			<td><%=  %></td>
+			<td><%=  %></td>
+			<td><%= @sum_price  %></td>
+			<td><%=  %></td>	
+
 </table>
+
