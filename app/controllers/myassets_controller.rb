@@ -48,6 +48,6 @@ class MyassetsController < ApplicationController
     def update_params
     params.require(:myasset).permit(:date,:asset1,:asset2,:asset3,:asset4,:asset5,:asset6,:asset7)
     end
-  
+
 
 end

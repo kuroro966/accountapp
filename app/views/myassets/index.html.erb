@@ -30,9 +30,9 @@
 			<td><%= myasset.asset5 %></td>
 			<td><%= myasset.asset6 %></td>
 			<td><%= myasset.asset7 %></td>
-			<% sum = myasset.sum_asset_from1_to7 %>
-			<td><%= sum %></td>
 			
+			<% sum = myasset.sum_asset_from1_to7 %>
+			<td> <%= sum %></td>
 			
 			<td><%= link_to "編集",edit_myasset_path(myasset) %></td>
 		  <td><%= link_to "削除",myasset_path(myasset), method: :delete,data:{confirm:'Are you sure?'} %></td>

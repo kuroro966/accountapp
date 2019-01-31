@@ -11,13 +11,10 @@ class Myasset < ApplicationRecord
 		self.asset1+self.asset2+self.asset3+self.asset4+self.asset5+self.asset6+self.asset7
 	end
  
-	def cal_increase_decrease
-    @myassets = Myasset.all
-
-  end
-
-	
-
-
+  # def sum
+  #   before_save do
+  #     self.sum = self.asset1+self.asset2+self.asset3+self.asset4+self.asset5+self.asset6+self.asset7
+  #   end
+  # end
 
 end
