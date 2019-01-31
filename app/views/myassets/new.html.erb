@@ -1,0 +1,62 @@
+myassetのnewページです。
+
+<% if @myasset.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% @myasset.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<%=form_for(@myasset) do |f|%>
+<div class="field">
+<%= f.label:日付 %><br/>
+<%= f.date_field :date, size:25 %>
+</div>
+
+<div class="field">
+<%= f.label:三井住友 %><br/>
+<%= f.number_field :asset1, size:25 %>
+</div>
+
+<div class="field">
+<%= f.label:みずほ %><br/>
+<%= f.number_field :asset2, size:25 %>
+</div>
+
+<div class="field">
+<%= f.label:財布 %><br/>
+<%= f.number_field :asset3, size:25 %>
+</div>
+
+<div class="field">
+<%= f.label:財形貯蓄 %><br/>
+<%= f.number_field :asset4, size:25 %>
+</div>
+
+<div class="field">
+<%= f.label:投資口座 %><br/>
+<%= f.number_field :asset5, size:25 %>
+</div>
+
+<div class="field">
+<%= f.label:貸付金 %><br/>
+<%= f.number_field :asset6, size:25 %>
+</div>
+
+<div class="field">
+<%= f.label:その他債権 %><br/>
+<%= f.number_field :asset7, size:25 %>
+</div>
+
+<div class="actions">
+<%= f.submit%>
+</div>
+
+<%end%>
+
+
+

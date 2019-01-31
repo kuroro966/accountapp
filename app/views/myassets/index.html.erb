@@ -1,0 +1,50 @@
+<p>myassetのindexページです。</p>
+<p><%= link_to "資産入力フォームへ",new_myasset_path %></p>
+
+<table>
+	<tr>
+		<th>id</th>
+		<th>date</th>
+		<th>SMBC</th>
+		<th>UFJ</th>
+		<th>財布</th>
+		<th>財形貯蓄</th>
+		<th>投資口座</th>
+		<th>貸付金</th>
+		<th>その他債権</th>
+		<th>合計</th>
+		<th>前月比</th>
+		<th>編集</th>
+		<th>削除</th>
+		
+	</tr>
+
+	<% @myassets.each do|myasset| %>
+		<tr>
+			<td><%= myasset.id %></td>
+			<td><%= myasset.date %></td>
+			<td><%= myasset.asset1 %></td>
+			<td><%= myasset.asset2 %></td>
+			<td><%= myasset.asset3 %></td>
+			<td><%= myasset.asset4 %></td>
+			<td><%= myasset.asset5 %></td>
+			<td><%= myasset.asset6 %></td>
+			<td><%= myasset.asset7 %></td>
+			<% sum = myasset.sum_asset_from1_to7 %>
+			<td><%= sum %></td>
+			
+			
+			<td><%= link_to "編集",edit_myasset_path(myasset) %></td>
+		  <td><%= link_to "削除",myasset_path(myasset), method: :delete,data:{confirm:'Are you sure?'} %></td>
+		</tr>
+	<%end%>
+
+	    <td><%=  %></td>
+			<td><%=  %></td>
+			<td><%=  %></td>
+			<td><%=  %></td>
+			<td><%= @sum_price  %></td>
+			<td><%=  %></td>	
+
+</table>
+
