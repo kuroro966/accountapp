@@ -1,2 +1,38 @@
-<h1>Debts#index</h1>
-<p>Find me in app/views/debts/index.html.erb</p>
+<p>debtのindexページです。</p>
+<p><%= link_to "負債入力フォームへ",new_debt_path %></p>
+
+<table>
+	<tr>
+		<th>id</th>
+		<th>date</th>
+		<th>クレカ1</th>
+		<th>クレカ1</th>
+		<th>クレカ1</th>
+		<th>借入金</th>
+		<th>その他</th>
+		<th>合計</th>
+		<th>編集</th>
+		<th>削除</th>
+		
+	</tr>
+
+	<% @debts.each do|debt| %>
+		<tr>
+			<td><%= debt.id %></td>
+			<td><%= debt.date %></td>
+			<td><%= debt.debt1 %></td>
+			<td><%= debt.debt2 %></td>
+			<td><%= debt.debt3 %></td>
+			<td><%= debt.debt4 %></td>
+			<td><%= debt.debt5 %></td>
+			<td><%= debt.sum %></td>
+			<%# sum = debt.sum_debt_from1_to7 %>
+			<!-- <td> <%#= sum %></td> -->
+			
+			<td><%= link_to "編集",edit_debt_path(debt) %></td>
+		  <td><%= link_to "削除",debt_path(debt), method: :delete,data:{confirm:'Are you sure?'} %></td>
+		</tr>
+	<%end%>
+
+</table>
+

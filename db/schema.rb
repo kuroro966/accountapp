@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_01_103917) do
+ActiveRecord::Schema.define(version: 2019_02_01_123803) do
+
+  create_table "debts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "date"
+    t.integer "debt1"
+    t.integer "debt2"
+    t.integer "debt3"
+    t.integer "debt4"
+    t.integer "debt5"
+    t.integer "sum"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "incomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date"
