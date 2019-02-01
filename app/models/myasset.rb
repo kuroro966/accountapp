@@ -7,14 +7,14 @@ class Myasset < ApplicationRecord
 
 
 
-	def sum_asset_from1_to7
-		self.asset1+self.asset2+self.asset3+self.asset4+self.asset5+self.asset6+self.asset7
-	end
+	# def sum_asset_from1_to7
+	# 	self.asset1+self.asset2+self.asset3+self.asset4+self.asset5+self.asset6+self.asset7
+	# end
  
-  # def sum
-  #   before_save do
-  #     self.sum = self.asset1+self.asset2+self.asset3+self.asset4+self.asset5+self.asset6+self.asset7
-  #   end
-  # end
+  def sum
+    # before_save do
+    self.sum = self.asset1+self.asset2+self.asset3+self.asset4+self.asset5+self.asset6+self.asset7
+    # end
+  end
 
 end

@@ -13,7 +13,6 @@
 		<th>貸付金</th>
 		<th>その他債権</th>
 		<th>合計</th>
-		<th>前月比</th>
 		<th>編集</th>
 		<th>削除</th>
 		
@@ -30,21 +29,14 @@
 			<td><%= myasset.asset5 %></td>
 			<td><%= myasset.asset6 %></td>
 			<td><%= myasset.asset7 %></td>
-			
-			<% sum = myasset.sum_asset_from1_to7 %>
-			<td> <%= sum %></td>
+			<td><%= myasset.sum %></td>
+			<%# sum = myasset.sum_asset_from1_to7 %>
+			<!-- <td> <%#= sum %></td> -->
 			
 			<td><%= link_to "編集",edit_myasset_path(myasset) %></td>
 		  <td><%= link_to "削除",myasset_path(myasset), method: :delete,data:{confirm:'Are you sure?'} %></td>
 		</tr>
 	<%end%>
-
-	    <td><%=  %></td>
-			<td><%=  %></td>
-			<td><%=  %></td>
-			<td><%=  %></td>
-			<td><%= @sum_price  %></td>
-			<td><%=  %></td>	
 
 </table>
 
