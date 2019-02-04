@@ -1,11 +1,47 @@
 <h1>収支合計のindexです</h1>
 
+<p>今月の最初の日です<%= @this_month_first %></p>
+<p>今月の最後の日です<%= @this_month_last %></p>
+<p>今月のoutcomeの合計です<%= @outcome_sum_price %></p>
+<p>今月のincomeの合計です<%= @income_sum_price %></p>
+<p>今月のoutcomeとincomeの合計です<%= @all_sum_price %></p>
 
-<p>outcomeの合計です<%= @outcome_sum_price %></p>
 
-<p>incomeの合計です<%= @income_sum_price %></p>
 
-<p>outcomeとincomeの合計です<%= @all_sum_price %></p>
+
+<table>
+	<tr>
+		<th>月</th>
+		<th>収入</th>
+		<th>支出</th>
+		<th>合計</th>
+	</tr>
+
+	<% @backs.each do|back| %>
+		<% @back_month_ago = @today.ago(back.month) %>
+		<% @back_month_ago_date_first = Date.new(@back_month_ago.year,@back_month_ago.month,1) %>
+		<% @back_month_ago_date_last = Date.new(@back_month_ago.year,@back_month_ago.month,-1) %>
+		<% @inin = Income.where("date between '#{@back_month_ago_date_first} 00:00:00' and '#{@back_month_ago_date_last} 23:59:59'").sum(:price) %>
+		<% @outout= Outcome.where("date between '#{@back_month_ago_date_first} 00:00:00' and '#{@back_month_ago_date_last} 23:59:59'").sum(:price) * -1 %>
+
+
+
+		<tr>
+			<td><%= "#{@back_month_ago.year}年#{@back_month_ago.month}月" %></td>
+			<td><%= @inin %></td>
+			<td><%= @outout %></td>
+			<td><%= @inin + @outout %></td>
+		</tr>
+
+	<% end %>
+
+</table>
+
+
+
+
+
+
 
 
 <p>test<%= @test %></p>
