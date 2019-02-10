@@ -1,17 +1,25 @@
 <p>outcomeのindexページです。</p>
 <p><%= link_to "支出入力フォームへ",new_outcome_path %></p>
 
-<table>
-	<tr>
-		<th>id</th>
-		<th>date</th>
-		<th>place</th>
-		<th>marchandise</th>
-		<th>price</th>
-		<th>category_id</th>
-	</tr>
 
-	<% @outcomes.each do|outcome| %>
+
+<table class="table">
+
+<thead class="thead-dark">
+		<tr>
+			<th scope="col">id</th>
+			<th scope="col">date</th>
+			<th scope="col">place</th>
+			<th scope="col">marchandise</th>
+			<th scope="col">price</th>
+			<th scope="col">category_id</th>
+			<th scope="col">編集</th>
+			<th scope="col">削除</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @outcomes.each do|outcome| %>
 		<tr>
 			<td><%= outcome.id %></td>
 			<td><%= outcome.date %></td>
@@ -24,12 +32,13 @@
 		</tr>
 	<%end%>
 
-	    <td><%=  %></td>
-			<td><%=  %></td>
-			<td><%=  %></td>
-			<td><%=  %></td>
-			<td><%= @sum_price  %></td>
-			<td><%=  %></td>	
+	</tbody>
+
+	<td><%=  %></td>
+	<td><%=  %></td>
+	<td><%=  %></td>
+	<td><%=  %></td>
+	<td><%= @sum_price  %></td>
+	<td><%=  %></td>	
 
 </table>
-

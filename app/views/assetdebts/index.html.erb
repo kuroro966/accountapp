@@ -1,12 +1,15 @@
-<h1>Assetdebts#index</h1>
+<p>全財産のindexページです</p>
+<ul>
+<li>①最新の全財産です<%= @assetdebt %></li>
+<li>最新(<%= @current_asset_date %>)の資産合計です<%= @current_asset_sum %></li>
+<li>最新(<%= @current_debt_date %>)の負債合計です<%= @current_debt_sum %></li>
+</ul>
 
-<p>①最新の全財産です<%= @assetdebt %></p>
-<p>最新(<%= @twomonthago_asset_date %>)の資産合計です<%= @current_asset_sum %></p>
-<p>最新(<%= @twomonthago_debt_date %>)の負債合計です<%= @current_debt_sum %></p>
-<p>...</p>
-<p>②前々月の全財産です<%= @twomonthago_assetdebt %></p>
-<p>前々月(<%= @twomonthago_asset_date %>)の資産合計です<%= @twomonthago_asset_sum %></p>
-<p>前々月(<%= @twomonthago_debt_date %>)の負債合計です<%= @twomonthago_debt_sum %></p>
-<p>...</p>
+<ul>
+<li>②前々月の全財産です<%= @twomonthago_assetdebt %></li>
+<li>前々月(<%= @twomonthago_asset_date %>)の資産合計です<%= @twomonthago_asset_sum %></li>
+<li>前々月(<%= @twomonthago_debt_date %>)の負債合計です<%= @twomonthago_debt_sum %></li>
+</ul>
+
 <p>①-②＝前月比です<%= @assetdebt - @twomonthago_assetdebt %></p>
 

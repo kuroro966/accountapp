@@ -1,39 +1,48 @@
-<h1>収支合計のindexです</h1>
+<p>収支合計のindexです</p>
 
 
 <% @thismonthincome = Income.where("date between '#{@this_month_first} 00:00:00' and '#{@this_month_last} 23:59:59'").sum(:price) %>
 <% @thismonthoutcome = Outcome.where("date between '#{@this_month_first} 00:00:00' and '#{@this_month_last} 23:59:59'").sum(:price) * -1 %>
+<!-- <ul>
+<li>今月(<%= @this_month_first %>〜<%= @this_month_last %>)のincomeの合計です<%= @thismonthincome %></li>
+<li>今月(<%= @this_month_first %>〜<%= @this_month_last %>)のoutcomeの合計です<%= @thismonthoutcome %></li>
+<li>今月(<%= @this_month_first %>〜<%= @this_month_last %>)の収支合計です<%= @thismonthincome + @thismonthoutcome %></li>
+</ul> -->
 
-<li>今月の最初の日です<%= @this_month_first %></li>
-<li>今月の最後の日です<%= @this_month_last %></li>
-<li>今月のincomeの合計です<%= @thismonthincome %></li>
-<li>今月のoutcomeの合計です<%= @thismonthoutcome %></li>
-<li>今月のincomeとoutcomeの合計です<%= @thismonthincome + @thismonthoutcome %></li>
 
-<table>
-	<tr>
-		<th>月</th>
-		<th>収入</th>
-		<th>支出</th>
-		<th>合計</th>
-</tr>
 
-	<% @backs.each do|back| %>
+
+<table class="table">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">月</th>
+			<th scope="col">収入</th>
+			<th scope="col">支出</th>
+			<th scope="col">合計</th>
+		</tr>
+	</thead>
+
+	<tbody>
+
+		<% @backs.each do|back| %>
 		<% @back_month_ago = @today.ago(back.month) %>
 		<% @back_month_ago_date_first = Date.new(@back_month_ago.year,@back_month_ago.month,1) %>
 		<% @back_month_ago_date_last = Date.new(@back_month_ago.year,@back_month_ago.month,-1) %>
 		<% @inin = Income.where("date between '#{@back_month_ago_date_first} 00:00:00' and '#{@back_month_ago_date_last} 23:59:59'").sum(:price) %>
 		<% @outout= Outcome.where("date between '#{@back_month_ago_date_first} 00:00:00' and '#{@back_month_ago_date_last} 23:59:59'").sum(:price) * -1 %>
 
-		<tr>
-			<td><%= "#{@back_month_ago.year}年#{@back_month_ago.month}月" %></td>
-			<td><%= @inin %></td>
-			<td><%= @outout %></td>
-			<td><%= @inin + @outout %></td>
-		</tr>
+			<tr>
+				<td><%= "#{@back_month_ago.year}年#{@back_month_ago.month}月" %></td>
+				<td><%= @inin %></td>
+				<td><%= @outout %></td>
+				<td><%= @inin + @outout %></td>
+			</tr>
 
-	<% end %>
+		<%end%>
+
+	</tbody>
 </table>
+
 
 
 
