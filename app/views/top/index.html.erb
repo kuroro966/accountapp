@@ -1,21 +1,8 @@
-<h1>Web家計簿のトップページとなります。</h1>
+<p>Web家計簿のトップページとなります。</p>
 
-<ul>
-	<li><%= link_to "全財産確認",assetdebts_path %></li>
-	<li><%= link_to "月別収支確認",lossprofits_path %></li>
-	<li><%= link_to "資産一覧へ",myassets_path %></li>
-	<li><%= link_to "負債一覧へ",debts_path %></li>
-	<li><%= link_to "収入一覧へ",incomes_path %></li>
-	<li><%= link_to "支出一覧へ",outcomes_path %></li>
-</ul>
-
-
-
-<p>画像</p>
-<p>画像</p>
-<p>画像</p>
-<p>画像</p>
-<p>画像</p>
-<p>画像</p>
-<p>画像</p>
-
+<%= link_to "全財産確認",assetdebts_path,class: "btn btn-primary" %>
+<%= link_to "月別収支確認",lossprofits_path,class: "btn btn-primary" %>
+<%= link_to "資産一覧へ",myassets_path,class: "btn btn-primary" %>
+<%= link_to "負債一覧へ",debts_path,class: "btn btn-primary" %>
+<%= link_to "収入一覧へ",incomes_path,class: "btn btn-primary" %>
+<%= link_to "支出一覧へ",outcomes_path,class: "btn btn-primary" %>
