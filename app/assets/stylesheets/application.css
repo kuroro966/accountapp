@@ -368,26 +368,45 @@ template {
 
 /*ここまでリセット*/
 
+
+
 header{
-	background-color: green;
+	background-color: navy;
 	color:white;
+  padding-bottom: 20px;
+
 }
+
+footer{
+  background-color: navy;
+  color:white;
+  padding-top: 20px;
+}
+
+.wrapper-all{
+  width: 80%;
+  margin: auto;
+  border: 1px #000000 solid;
+}
+
 
 .top-title{
-	float: left;
+	/*float: left;*/
+  margin: auto;
+  text-align: center;
 }
 
-.header-right{
-	float: right
-}
+.main{
+  text-align: center;
 
-header:after, header:before {
-    content: "";
-    clear: both;
-    display: block;
 }
 
 
+
+.center{
+  margin: auto;
+  text-align: center;
+}
 
 
 

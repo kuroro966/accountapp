@@ -1,23 +1,25 @@
 <p>myassetのindexページです。</p>
-<p><%= link_to "資産入力フォームへ",new_myasset_path %></p>
 
-<table>
-	<tr>
-		<th>id</th>
-		<th>date</th>
-		<th>SMBC</th>
-		<th>UFJ</th>
-		<th>財布</th>
-		<th>財形貯蓄</th>
-		<th>投資口座</th>
-		<th>貸付金</th>
-		<th>その他債権</th>
-		<th>合計</th>
-		<th>編集</th>
-		<th>削除</th>
-		
-	</tr>
+<table class="table">
 
+<thead class="thead-dark">
+		<tr>
+			<th scope="col">id</th>
+			<th scope="col">date</th>
+			<th scope="col">SMBC</th>
+			<th scope="col">UFJ</th>
+			<th scope="col">財布</th>
+			<th scope="col">財形貯蓄</th>
+			<th scope="col">投資口座</th>
+			<th scope="col">貸付金</th>
+			<th scope="col">その他情報</th>
+			<th scope="col">合計</th>
+			<th scope="col">編集</th>
+			<th scope="col">削除</th>
+		</tr>
+	</thead>
+
+	<tbody>
 	<% @myassets.each do|myasset| %>
 		<tr>
 			<td><%= myasset.id %></td>
@@ -38,5 +40,8 @@
 		</tr>
 	<%end%>
 
+	</tbody>
+
 </table>
+
 
