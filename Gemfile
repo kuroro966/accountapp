@@ -9,7 +9,7 @@ gem 'rails', '~> 5.2.2'
 # Use mysql as the database for Active Record
 #gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 
-#gem 'mysql2', '0.5.2'
+gem 'mysql2', '0.5.2'
 #デプロイのため一旦消した
 
 # Use Puma as the app server
@@ -78,6 +78,6 @@ group :development, :test do
 end
 
 
-gem 'sqlite3', group: [:development, :test]
-gem 'pg', group: :production
+# gem 'sqlite3', group: [:development, :test]
+# gem 'pg', group: :production
 #herokuアップ用　https://qiita.com/NaokiIshimura/items/eee473675d624a17310f
