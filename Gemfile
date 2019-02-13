@@ -75,3 +75,8 @@ group :development, :test do
   gem 'pry-doc'
 end
 
+
+gem 'sqlite3', group: [:development, :test]
+gem 'pg', group: :production
+#herokuアップ用　https://qiita.com/NaokiIshimura/items/eee473675d624a17310f
+
